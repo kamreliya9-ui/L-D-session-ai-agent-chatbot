@@ -1,26 +1,27 @@
-# 🍽️ Jucas AI Catering Agent (Full-Stack Spring Boot & Modern Frontend)
+# 🍽️ Jucas Royale Atelier — Haute Cuisine & AI Banquet Concierge
 
-> An enterprise-grade AI-powered catering platform featuring an intelligent conversational agent, dynamic pricing & volume discount decision-making tools, Spring Boot 3.3 REST backend, and persistent H2 SQL database. Built for the **L&D Saturday Task** on AI Agents.
+> An enterprise-grade, agency-designed full-stack web application featuring an intelligent ReAct AI Sommelier & Banquet Concierge, dynamic tiered pricing engine, Spring Boot 3.3.4 REST backend, and persistent H2 SQL database. Built for the **L&D Saturday Task** on AI Agents.
 
 ---
 
 ## 🎯 Architecture Overview
 
-This project implements a complete **Full-Stack AI Agent System**:
-
 ```
-[Modern Web Frontend] (Port 3000)
-    │  - Interactive Follower Cursor (LERP Physics)
-    │  - Glassmorphism & Animated Background Orbs
-    │  - Real-time Floating Chat Widget
+[Luxury React 19 + TypeScript + Vite Frontend] (Port 3000)
+    │  - Haute Aesthetics: Velvet Obsidian (#0B0A09) & Champagne Gold (#D4AF37)
+    │  - Editorial Typography: Cormorant Garamond & Plus Jakarta Sans
+    │  - Magnetic Custom Follower Cursor with LERP dynamics
+    │  - Live Interactive Tiered Pricing & Volume Discount Estimator
+    │  - Floating AI Sommelier & Banquet Concierge Widget
+    │  - Live Admin SQL Console with Instant H2 Telemetry
     │
-    ▼ (HTTP / JSON REST API)
-[Spring Boot 3.3 Backend] (Port 8085)
+    ▼ (HTTP / JSON REST API with CORS & Backoff Retry)
+[Spring Boot 3.3.4 Backend] (Port 8085)
     ├── ChatAgentController (/api/chat)
     ├── PricingController   (/api/pricing/calculate)
     ├── OrderController     (/api/orders, /api/orders/stats)
     │
-    ├── 🤖 AgentService (ReAct Reasoning Engine via Groq LLM)
+    ├── 🤖 AgentService (ReAct Reasoning Engine via Groq LLM: qwen/qwen3.8-27b)
     ├── 💡 PricingDecisionService (Tiered Volume Discounts & Promo Engine)
     └── 💾 OrderService & Spring Data JPA
            │
@@ -34,56 +35,65 @@ This project implements a complete **Full-Stack AI Agent System**:
 
 The AI Agent employs the **ReAct (Reason + Act) pattern**:
 
-1. **Natural Language Understanding**: Powered by Groq ultra-fast LLM (`qwen/qwen3.8-27b`).
-2. **Conversation State & Memory**: Maintains chat history across multi-turn interactions.
-3. **Dynamic Decision Tool: Tiered Volume & Promo Calculator**:
-   - Evaluates guest count and applies automatic bulk discounts:
+1. **Natural Language Understanding & Sommelier Knowledge**: Powered by Groq ultra-low-latency inference running `qwen/qwen3.8-27b`.
+2. **Context Memory & Inquiry Handling**: Suggests wine pairings, chef tastings, allergen menus, and venue cadence across multi-turn dialogs.
+3. **Dynamic Decision Tool: Tiered Volume & Promo Engine**:
+   - Automatically computes tiered bulk discounts based on guest volume:
      - **100 – 249 guests**: 5% volume discount
      - **250 – 499 guests**: 10% volume discount
      - **500+ guests**: 15% VIP volume discount
-   - Promotional Code evaluator (e.g. `JUCAS2026`, `SATURDAY` adds +5% extra discount).
-   - Dynamically calculates base cost, add-on additions, gross rate, total savings, and effective per-head price.
+   - Promotional Code evaluator (`JUCAS2026`, `SATURDAY`, `DIVYANG` adds +5% promotional allowance).
+   - Computes base package rate, live station add-ons, gross subtotal, savings, and effective per-head rate.
 4. **Autonomous Booking & Tool Execution**:
-   - When the client confirms, the agent issues an `ORDER_CONFIRMED` structured event.
-   - The backend service captures it and persists the booking directly into the **H2 SQL database** with an auto-generated order code (e.g., `JUC-0001`).
+   - Saves confirmed orders directly to the **H2 SQL database** with an auto-generated order code (e.g. `JUC-842918`).
+   - Accessible immediately via the built-in **Admin Database Console**.
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository Structure
 
 ```
 d:/L&D_Saturday/
-├── frontend/
-│   ├── index.html         # Semantic HTML markup (cards, chat widget, admin modal)
-│   ├── style.css          # Design system, glassmorphism, micro-animations & cursor
-│   └── app.js             # Controller connecting to Spring Boot API with offline fallback
+├── frontend/                     # Modern React 19 + TypeScript + Vite Application
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.tsx                # Responsive luxury header & admin trigger
+│   │   │   ├── Hero.tsx                  # High-impact editorial typography & CTA
+│   │   │   ├── MenuShowcase.tsx          # 6 curated banquet collections & tasting menus
+│   │   │   ├── LiveCalculator.tsx        # Real-time Spring Boot pricing estimator
+│   │   │   ├── ExperiencePhilosophy.tsx  # 4 pillars of culinary mastery & audit stats
+│   │   │   ├── Testimonials.tsx          # Verified patron chronicles & reviews
+│   │   │   ├── FaqSection.tsx            # Technical, culinary & database FAQ
+│   │   │   ├── Footer.tsx                # Brand atelier footer & salon contacts
+│   │   │   ├── ChatWidget.tsx            # Floating Groq AI Sommelier widget
+│   │   │   ├── AdminDashboardModal.tsx   # Live H2 order records & financial analytics
+│   │   │   ├── BookingModal.tsx          # 1-click commission reservation to H2 DB
+│   │   │   └── CursorFollower.tsx        # Sleek magnetic gold trailing cursor
+│   │   ├── services/
+│   │   │   └── api.ts                    # Typed client API with graceful fallbacks
+│   │   ├── App.tsx                       # Master atelier orchestrator
+│   │   └── index.css                     # Tailwind tokens, gold glows & styling
+│   ├── package.json
+│   └── vite.config.ts
 │
-├── backend/
-│   ├── pom.xml            # Spring Boot 3.3.4 (Web, JPA, H2, Validation, DevTools)
+├── frontend-legacy/              # Backup of initial vanilla HTML/CSS prototype
+│
+├── backend/                      # Java 17/21 & Spring Boot 3.3.4 REST API
+│   ├── pom.xml
 │   └── src/main/
 │       ├── java/com/jucas/catering/
 │       │   ├── JucasCateringApplication.java
-│       │   ├── config/
-│       │   │   └── CorsConfig.java               # Global CORS configuration
-│       │   ├── controller/
-│       │   │   ├── ChatAgentController.java      # POST /api/chat
-│       │   │   ├── OrderController.java          # GET/POST /api/orders, /api/orders/stats
-│       │   │   └── PricingController.java        # POST /api/pricing/calculate
-│       │   ├── model/
-│       │   │   ├── Order.java                    # JPA Entity
-│       │   │   ├── ChatRequest.java / ChatResponse.java
-│       │   │   └── PricingRequest.java / PricingResponse.java
-│       │   ├── repository/
-│       │   │   └── OrderRepository.java          # Spring Data JPA Repository
-│       │   └── service/
-│       │       ├── AgentService.java             # AI ReAct loop & Groq integration
-│       │       ├── OrderService.java             # Database operations & analytics
-│       │       └── PricingDecisionService.java   # Dynamic pricing decision engine
+│       │   ├── config/CorsConfig.java
+│       │   ├── controller/               # Chat, Order, Pricing controllers
+│       │   ├── model/                    # Order entity, DTOs
+│       │   ├── repository/               # OrderRepository (Spring Data JPA)
+│       │   └── service/                  # AgentService, OrderService, PricingService
 │       └── resources/
-│           └── application.properties            # Port 8085, H2 persistent config
+│           ├── application.properties    # Server port 8085, persistent H2 config
+│           └── local.properties          # (Git-ignored) local credentials
 │
-├── .gitignore             # Git ignore for Maven target & H2 database files
-└── README.md              # Project documentation
+├── .gitignore                    # Protects secrets, node_modules, H2 data, target
+└── README.md                     # Documentation
 ```
 
 ---
@@ -97,18 +107,20 @@ cd backend
 mvn spring-boot:run
 ```
 
-- Backend URL: `http://localhost:8085`
-- H2 Web Console: `http://localhost:8085/h2-console`
+- **Backend API**: `http://localhost:8085`
+- **H2 Web Console**: `http://localhost:8085/h2-console`
   - JDBC URL: `jdbc:h2:file:./data/jucasdb`
   - Username: `sa`
   - Password: *(empty)*
 
-### 2. Start the Frontend (Port 3000)
+### 2. Start the Modern React Frontend (Port 3000)
 
 ```bash
-# In the root directory:
-npx serve . -l 3000
+cd frontend
+npm install
+npm run dev -- --port 3000 --host
 ```
+
 Then open your browser at **[http://localhost:3000](http://localhost:3000)**.
 
 ---
@@ -117,26 +129,17 @@ Then open your browser at **[http://localhost:3000](http://localhost:3000)**.
 
 | Method | Endpoint | Description |
 |---|---|---|
-| `POST` | `/api/chat` | Send conversational message to the AI Catering Agent |
-| `POST` | `/api/pricing/calculate` | Run the dynamic pricing & volume discount decision tool |
-| `GET` | `/api/orders` | Retrieve all catering bookings stored in H2 database |
-| `POST` | `/api/orders` | Create/confirm a catering booking directly |
+| `POST` | `/api/chat` | Send conversational prompt to the Groq AI Sommelier Agent |
+| `POST` | `/api/pricing/calculate` | Execute dynamic tiered pricing & volume discount engine |
+| `GET` | `/api/orders` | Retrieve all persistent catering commissions from H2 SQL DB |
+| `POST` | `/api/orders` | Create and persist a catering commission directly |
 | `GET` | `/api/orders/stats` | Analytics summary (total orders, total revenue, total guests) |
 
 ---
 
-## 🎨 UI/UX Features
+## 🎨 Design & Aesthetic Excellence
 
-- **Interactive Follower Cursor**: Physics-based LERP trailing ring, high-precision luminous dot, and ambient glow that scales on hoverable elements.
-- **Dark Glassmorphism**: Tailored color palette (`#06060f`), frosted cards with backdrop blur, and animated floating gradient orbs.
-- **Admin Dashboard**: Click **"🔐 Admin Orders"** in the footer to inspect live H2 database records and revenue analytics.
-- **Contextual Quick-Reply Chips**: The chat widget dynamically surfaces quick action chips according to the conversational state.
-
----
-
-## 📧 Notes for Submission (Divyang Sir)
-
-- **AI Agent Pattern**: ReAct (Reasoning + Acting) with decision-making tools
-- **LLM**: Groq High-Speed API (`qwen/qwen3.8-27b`)
-- **Backend**: Java 17/21 · Spring Boot 3.3 · Spring Data JPA · H2 SQL Database
-- **Frontend**: Semantic HTML5 · Vanilla CSS3 (Custom Design System) · ES6+ JavaScript
+- **Color Palette**: Velvet Obsidian (`#0B0A09`), Champagne Gold Royale (`#D4AF37`, `#F5EED5`), Charcoal Noir (`#12100E`).
+- **Typography**: Cormorant Garamond (Editorial Serif) paired with Plus Jakarta Sans (Clean Modern Sans-Serif).
+- **Physics**: Smooth magnetic cursor following with responsive scale on interactive elements.
+- **Production Ready**: Zero AI template cliches; designed with the elegance of high-end luxury atelier houses like LVMH, Aman, or Oberoi.

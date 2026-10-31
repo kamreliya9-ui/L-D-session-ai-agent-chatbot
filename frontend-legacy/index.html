@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jucas Royale — Luxury AI Catering Services</title>
+  <meta name="description" content="Jucas Catering brings you royal, Michelin-standard event catering with real-time AI quotation and volume discounts." />
+
+  <!-- Google Fonts (Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Fluid Magnetic Cursor System -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div class="cursor-glow"></div>
+
+  <!-- Animated Background Orbs -->
+  <div class="orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar">
+    <div class="nav-logo">⚜️ Jucas Royale</div>
+    <ul class="nav-links">
+      <li><a href="#menu">Curated Menus</a></li>
+      <li><a href="#calculator">Live Estimator</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openChat()">Plan with AI ✨</button>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-grid-overlay"></div>
+    <div class="hf1 hero-float"></div>
+    <div class="hf2 hero-float"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Enterprise AI Catering Agent &bull; Instant Quotes &bull; 24/7 Available
+      </div>
+      <h1>Grand Celebrations,<br><span class="gradient-text">Masterfully Catered.</span></h1>
+      <p>From royal palace banquets to luxury corporate galas. Converse with our AI agent to curate custom menus, unlock volume discounts, and book in seconds.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openChat()">💬 Chat with AI Agent</button>
+        <button class="btn-ghost" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">⚡ Instant Price Estimator</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number" data-count="1500">0</div>
+        <div class="stat-label">Royal Events</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="980">0</div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="15">0</div>
+        <div class="stat-label">Cities Served</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="10">0</div>
+        <div class="stat-label">Years of Craft</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== MENU PACKAGES ===================== -->
+  <section id="menu">
+    <div class="fade-up">
+      <div class="section-tag">Culinary Masterpieces</div>
+      <h2 class="section-title">Curated <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Banquet Packages</span></h2>
+      <p class="section-subtitle">Crafted with artisanal precision, authentic royal spices, and farm-to-table organic ingredients.</p>
+    </div>
+    <div class="menu-grid fade-up">
+      <!-- Indian -->
+      <div class="menu-card card-indian" onclick="openChatWithMenu('Indian')">
+        <div class="menu-card-header">
+          <span class="menu-icon">🍛</span>
+          <div class="menu-name">Royal Indian Feast</div>
+          <span class="menu-tag">Grand Wedding Special</span>
+        </div>
+        <div class="menu-card-body">
+          <ul class="menu-items">
+            <li>Butter Chicken &amp; Slow-Cooked Dal Makhani</li>
+            <li>Awadhi Dum Biryani with Burani Raita</li>
+            <li>Fresh Tandoori Naan &amp; Laccha Paratha</li>
+            <li>Shahi Tukda &amp; Saffron Kulfi</li>
+            <li>Live Delhi Chaat &amp; Pani Puri Counter</li>
+          </ul>
+          <div class="menu-price-row">
+            <div>
+              <div class="menu-price">&#8377;500</div>
+              <div class="menu-per">per head &middot; min 100 guests</div>
+            </div>
+            <button class="menu-order-btn">Book &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Continental -->
+      <div class="menu-card card-continental" onclick="openChatWithMenu('Continental')">
+        <div class="menu-card-header">
+          <span class="menu-icon">🥩</span>
+          <div class="menu-name">Continental Elegance</div>
+          <span class="menu-tag">Corporate Gala Favourite</span>
+        </div>
+        <div class="menu-card-body">
+          <ul class="menu-items">
+            <li>Herb Roasted Chicken &amp; Fish Meunière</li>
+            <li>Live Fettuccine &amp; Penne Pasta Stations</li>
+            <li>Artisan Sourdough &amp; Bruschetta Platters</li>
+            <li>Classic French Crème Brûlée</li>
+            <li>Organic Caesar &amp; Greek Salad Bar</li>
+          </ul>
+          <div class="menu-price-row">
+            <div>
+              <div class="menu-price">&#8377;650</div>
+              <div class="menu-per">per head &middot; min 50 guests</div>
+            </div>
+            <button class="menu-order-btn">Book &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chinese -->
+      <div class="menu-card card-chinese" onclick="openChatWithMenu('Chinese')">
+        <div class="menu-card-header">
+          <span class="menu-icon">🥟</span>
+          <div class="menu-name">Chinese Fiesta</div>
+          <span class="menu-tag">Cocktail Special</span>
+        </div>
+        <div class="menu-card-body">
+          <ul class="menu-items">
+            <li>Steam &amp; Pan-Fried Dim Sum Basket</li>
+            <li>Wok-Tossed Hakka Noodles &amp; Fried Rice</li>
+            <li>Crispy Chilli Babycorn &amp; Spring Rolls</li>
+            <li>Sweet &amp; Sour Hot Soup</li>
+            <li>Warm Toffee Apple with Sesame Gelato</li>
+          </ul>
+          <div class="menu-price-row">
+            <div>
+              <div class="menu-price">&#8377;450</div>
+              <div class="menu-per">per head &middot; min 50 guests</div>
+            </div>
+            <button class="menu-order-btn">Book &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- South Indian -->
+      <div class="menu-card card-south" onclick="openChatWithMenu('South Indian')">
+        <div class="menu-card-header">
+          <span class="menu-icon">🌴</span>
+          <div class="menu-name">South Indian Delight</div>
+          <span class="menu-tag">Traditional Heritage</span>
+        </div>
+        <div class="menu-card-body">
+          <ul class="menu-items">
+            <li>Live Podi Dosa &amp; Uttapam Counter</li>
+            <li>Crispy Medu Vada &amp; Steamed Idli</li>
+            <li>Kerala Fish Moilee / Malabar Veg Stew</li>
+            <li>Chettinad Rice &amp; Tomato Rasam</li>
+            <li>Filter Kaapi Counter with Banana Fritters</li>
+          </ul>
+          <div class="menu-price-row">
+            <div>
+              <div class="menu-price">&#8377;350</div>
+              <div class="menu-per">per head &middot; min 50 guests</div>
+            </div>
+            <button class="menu-order-btn">Book &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BBQ & Grill -->
+      <div class="menu-card card-bbq" onclick="openChatWithMenu('BBQ')">
+        <div class="menu-card-header">
+          <span class="menu-icon">🔥</span>
+          <div class="menu-name">Live BBQ &amp; Grill</div>
+          <span class="menu-tag">VIP Outdoor Experience</span>
+        </div>
+        <div class="menu-card-body">
+          <ul class="menu-items">
+            <li>Open Charcoal Grill with Master Pitmaster</li>
+            <li>Smoked Chicken, Seekh Kebabs &amp; Paneer Tikka</li>
+            <li>Charred Sweet Corn &amp; Herb Vegetables</li>
+            <li>Warm Pita, Garlic Hummus &amp; Dips</li>
+            <li>Artisanal Mocktail Bar Included</li>
+          </ul>
+          <div class="menu-price-row">
+            <div>
+              <div class="menu-price">&#8377;750</div>
+              <div class="menu-per">per head &middot; min 30 guests</div>
+            </div>
+            <button class="menu-order-btn">Book &rarr;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vegan -->
+      <div class="menu-card card-vegan" onclick="openChatWithMenu('Vegan')">
+        <div class="menu-card-header">
+          <span class="menu-icon">🌱</span>
+          <div class="menu-name">Vegan &amp; Wellness</div>
+          <span class="menu-tag">Plant-Based Luxury</span>
+        </div>
+        <div class="menu-card-body">
+          <ul class="menu-items">
+            <li>Quinoa Superfood &amp; Edamame Bowls</li>
+            <li>Coconut Lemongrass Thai Green Curry</li>
+            <li>Avocado &amp; Vegan Sushi Roll Platter</li>
+            <li>Cold-Pressed Detox Juice Bar</li>
+            <li>Raw Vegan Cacao &amp; Berry Torte</li>
+          </ul>
+          <div class="menu-price-row">
+            <div>
+              <div class="menu-price">&#8377;550</div>
+              <div class="menu-per">per head &middot; min 30 guests</div>
+            </div>
+            <button class="menu-order-btn">Book &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEW: INTERACTIVE LIVE CALCULATOR ===================== -->
+  <section id="calculator">
+    <div class="fade-up">
+      <div class="section-tag">Real-Time Spring Boot Decision Engine</div>
+      <h2 class="section-title">Interactive <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Price &amp; Discount Calculator</span></h2>
+      <p class="section-subtitle">Tweak guest counts and stations to watch dynamic bulk discounts automatically apply in real time via our Spring Boot API.</p>
+    </div>
+
+    <div class="calc-container fade-up">
+      <!-- Calculator Controls -->
+      <div class="calc-controls">
+        <div class="calc-form-group">
+          <label class="calc-label">1. Choose Package</label>
+          <div class="calc-packages">
+            <button class="calc-pkg-btn active" data-pkg="Royal Indian Feast" data-rate="500">Royal Indian (&#8377;500)</button>
+            <button class="calc-pkg-btn" data-pkg="Continental Elegance" data-rate="650">Continental (&#8377;650)</button>
+            <button class="calc-pkg-btn" data-pkg="Chinese Fiesta" data-rate="450">Chinese (&#8377;450)</button>
+            <button class="calc-pkg-btn" data-pkg="South Indian Delight" data-rate="350">South Indian (&#8377;350)</button>
+            <button class="calc-pkg-btn" data-pkg="Live BBQ & Grill" data-rate="750">BBQ &amp; Grill (&#8377;750)</button>
+            <button class="calc-pkg-btn" data-pkg="Vegan & Wellness" data-rate="550">Vegan (&#8377;550)</button>
+          </div>
+        </div>
+
+        <div class="calc-form-group">
+          <label class="calc-label">2. Guest Count: <span id="calc-guest-display" class="calc-slider-current">200 Guests</span></label>
+          <div class="calc-slider-wrap">
+            <input type="range" min="30" max="800" step="10" value="200" id="guest-slider" class="calc-slider" />
+            <div class="calc-slider-val">
+              <span>30 guests</span>
+              <span style="color:#d4af37">100+ (5% off)</span>
+              <span style="color:#f59e0b">250+ (10% off)</span>
+              <span style="color:#34d399">500+ (15% off)</span>
+              <span>800 guests</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-form-group">
+          <label class="calc-label">3. Add-on Live Stations</label>
+          <div class="calc-addons">
+            <label class="calc-addon-check">
+              <input type="checkbox" value="Welcome Drinks" class="calc-addon-input" /> Welcome Drinks (+&#8377;80)
+            </label>
+            <label class="calc-addon-check">
+              <input type="checkbox" value="Dessert Counter" class="calc-addon-input" /> Dessert Counter (+&#8377;120)
+            </label>
+            <label class="calc-addon-check">
+              <input type="checkbox" value="Live Pasta" class="calc-addon-input" /> Live Pasta (+&#8377;100)
+            </label>
+            <label class="calc-addon-check">
+              <input type="checkbox" value="Mocktail Bar" class="calc-addon-input" /> Mocktail Bar (+&#8377;150)
+            </label>
+          </div>
+        </div>
+
+        <div class="calc-form-group">
+          <label class="calc-label">4. Promo Code</label>
+          <div class="calc-promo-row">
+            <input type="text" id="calc-promo" placeholder="Try code JUCAS2026 or SATURDAY" class="calc-promo-input" />
+            <button type="button" id="calc-apply-promo" class="calc-promo-btn">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Quote Card -->
+      <div class="calc-result-card">
+        <div>
+          <div class="quote-header">📋 Live Estimate Breakdown</div>
+          <div class="quote-row">
+            <span>Selected Package</span>
+            <strong id="quote-pkg-name">Royal Indian Feast</strong>
+          </div>
+          <div class="quote-row">
+            <span>Base Rate</span>
+            <strong id="quote-base-rate">&#8377;500 / head</strong>
+          </div>
+          <div class="quote-row">
+            <span>Add-on Stations</span>
+            <strong id="quote-addons-rate">+&#8377;0 / head</strong>
+          </div>
+          <div class="quote-row">
+            <span>Gross Total</span>
+            <span id="quote-subtotal">&#8377;1,00,000</span>
+          </div>
+          <div class="quote-row discount-row" id="quote-discount-row">
+            <span id="quote-discount-label">🏷️ Volume Discount (5%)</span>
+            <strong id="quote-discount-val">-&#8377;5,000</strong>
+          </div>
+        </div>
+
+        <div class="quote-total-box">
+          <div class="quote-total-lbl">Final All-Inclusive Total</div>
+          <div class="quote-total-val" id="quote-final-total">&#8377;95,000</div>
+          <div style="font-size:0.85rem;color:#cbd5e1;margin-bottom:14px;">
+            Effective rate: <strong id="quote-effective-rate" style="color:#fbbf24">&#8377;475 / head</strong>
+          </div>
+          <button class="quote-book-btn" onclick="bookFromCalculator()">💬 Book with AI Agent Now &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section id="how-it-works">
+    <div class="fade-up" style="max-width:920px;margin:0 auto;">
+      <div class="section-tag">Seamless Journey</div>
+      <h2 class="section-title">Order in <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">4 Royal Steps</span></h2>
+      <p class="section-subtitle">Our intelligent Spring Boot AI Agent coordinates your banquet from inquiry to execution.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Converse with AI</h3>
+          <p>Open the chat widget and share your occasion, guest count, and culinary preferences.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Dynamic Decision Tool</h3>
+          <p>Our Spring Boot pricing engine runs automated volume discounts based on event size.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Refine &amp; Confirm</h3>
+          <p>Customize add-on stations, review savings, and confirm your booking in real time.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Persistent SQL Save</h3>
+          <p>Order is saved in the persistent H2 database. Master chefs reach out within 2 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services">
+    <div class="fade-up">
+      <div class="section-tag">Royal Offerings</div>
+      <h2 class="section-title">Bespoke <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Event Services</span></h2>
+      <p class="section-subtitle">End-to-end hospitality crafted for discerning hosts and prestigious venues.</p>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <span class="service-icon">💒</span>
+        <h3>Royal Weddings</h3>
+        <p>From sangeet nights to grand palace receptions — theatrical culinary presentations with silver cloche service and traditional sweets.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🏢</span>
+        <h3>Corporate Summits</h3>
+        <p>Executive lunches, international buffet spreads, and cocktail dinners designed to leave a lasting impression on partners.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🎂</span>
+        <h3>Private Soirées</h3>
+        <p>Intimate birthdays, milestone anniversaries, and yacht parties with bespoke menus tailored to your guest palette.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">👨‍🍳</span>
+        <h3>Live Chef Theatres</h3>
+        <p>Open flame tandoor, pasta wheels, teppanyaki grills, and nitrogen dessert stations manned by award-winning chefs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEW: CLIENT TESTIMONIALS ===================== -->
+  <section id="testimonials">
+    <div class="fade-up">
+      <div class="section-tag">Client Reviews</div>
+      <h2 class="section-title">Celebrated by <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Discerning Hosts</span></h2>
+      <p class="section-subtitle">Discover how Jucas Royale orchestrates unforgettable banquets.</p>
+    </div>
+    <div class="testimonials-grid fade-up">
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"An unforgettable wedding feast for our 500 guests! The live Delhi chaat and dum biryani were divine. The AI gave us an instant 15% VIP discount right during our chat."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">AS</div>
+          <div>
+            <div class="author-name">Ananya &amp; Rohan Singhania</div>
+            <div class="author-title">Grand Wedding &bull; Umaid Bhawan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"Jucas catered our Global Leadership Gala with 400 international delegates. The continental spread and mocktail bar were Michelin quality. Flawless execution!"</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">VM</div>
+          <div>
+            <div class="author-name">Vikram Mehta</div>
+            <div class="author-title">VP Corporate HR &bull; FinTech Corp</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"The live BBQ grill and artisan dessert counter made my milestone 40th birthday the talk of the town. Super seamless planning with their Spring Boot AI assistant!"</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">SP</div>
+          <div>
+            <div class="author-name">Dr. Shalini Patel</div>
+            <div class="author-title">Private Soirée &bull; Mumbai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEW: FAQ ACCORDION ===================== -->
+  <section id="faq">
+    <div class="fade-up" style="max-width:820px;margin:0 auto;text-align:center;">
+      <div class="section-tag">Frequently Asked Questions</div>
+      <h2 class="section-title">Everything You <span style="background:var(--grad-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Need to Know</span></h2>
+      <p class="section-subtitle" style="margin: 0 auto 40px;">Transparent policies for your peace of mind.</p>
+    </div>
+
+    <div class="faq-wrap fade-up">
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>How does the AI Agent plan and book my catering?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Our AI agent is powered by an ultra-fast LLM integrated with a Spring Boot backend. It understands your guest count, cuisine preferences, dietary restrictions, calculates tiered volume discounts, and confirms your order straight into our persistent SQL database.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What volume discounts are available for large events?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We offer automatic tiered volume discounts: 5% off for 100+ guests, 10% off for 250+ guests, and 15% VIP discount for 500+ guests. You can also enter promotional codes like <code>JUCAS2026</code> for an additional 5% discount.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can we arrange a food tasting session before confirming?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! For all bookings of 100+ guests, our executive chef team hosts an exclusive complimentary tasting session for up to 4 family members at our central tasting studio.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Where are our catering bookings stored?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          All bookings are saved in our persistent Spring Boot H2 SQL database. You can review all confirmed orders by clicking the "🔐 Admin Orders" button in the footer.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">⚜️ Jucas Royale</div>
+      <div class="footer-copy">&#169; 2026 Jucas Royale Catering Services. Full-Stack Spring Boot &amp; AI Agent.</div>
+      <button class="footer-admin" onclick="openAdmin()" id="admin-btn">&#128274; Admin Orders</button>
+    </div>
+  </footer>
+
+  <!-- ===================== CHAT FLOATING BUTTON ===================== -->
+  <button id="chat-toggle" onclick="toggleChat()" title="Chat with Jucas AI">&#128172;</button>
+
+  <!-- ===================== CHAT PANEL WIDGET ===================== -->
+  <div id="chat-panel">
+    <div class="chat-header">
+      <div class="chat-avatar">&#129302;</div>
+      <div class="chat-header-info">
+        <div class="chat-agent-name">Jucas Royale AI</div>
+        <div class="chat-status">
+          <span class="status-dot"></span> Online &mdash; Powered by Spring Boot 3.3
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">&#10005;</button>
+    </div>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="quick-replies" id="quick-replies"></div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off" />
+      <button id="send-btn" onclick="sendMessage()" title="Send">&#10148;</button>
+    </div>
+  </div>
+
+  <!-- ===================== ADMIN MODAL ===================== -->
+  <div id="admin-modal" onclick="closeAdminOnBackdrop(event)">
+    <div class="admin-panel" id="admin-inner">
+      <div class="admin-header">
+        <div class="admin-title">&#128203; <span>Orders Dashboard (H2 SQL DB)</span></div>
+        <button class="admin-close" onclick="closeAdmin()">&#10005;</button>
+      </div>
+      <div class="admin-body" id="admin-body"></div>
+    </div>
+  </div>
+
+  <!-- External Application Controller -->
+  <script src="app.js"></script>
+</body>
+</html>

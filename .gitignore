@@ -22,3 +22,6 @@ local.properties
 
 # Node/Server
 node_modules/
+dist/
+**/dist/
+*.tsbuildinfo
