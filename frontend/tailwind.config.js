@@ -7,43 +7,61 @@ export default {
   theme: {
     extend: {
       colors: {
+        ivory: {
+          DEFAULT: '#F5F0E7',
+          light: '#F8F4EC',
+          soft: '#FAF7F2',
+        },
+        champagne: {
+          DEFAULT: '#EAE1D2',
+          light: '#EDE4D6',
+          dark: '#DCCBB0',
+        },
+        espresso: {
+          DEFAULT: '#211A16',
+          dark: '#171310',
+          charcoal: '#211C18',
+          deep: '#1A1411',
+          surface: '#2A211B',
+        },
+        taupe: {
+          DEFAULT: '#786B60',
+          muted: '#8C7E72',
+          light: '#A89B8F',
+          dark: '#5C5148',
+        },
         gold: {
-          50: '#FBF8EE',
-          100: '#F5EED5',
-          200: '#EBDCA9',
-          300: '#DEC477',
-          400: '#D4AF37',
-          500: '#C29B27',
-          600: '#A47D1C',
-          700: '#7E5B17',
-          800: '#5F4416',
-          900: '#433013',
+          DEFAULT: '#B39754',
+          antique: '#B39754',
+          light: '#C7A968',
+          dark: '#A48642',
+          sheen: '#D8BD7C',
         },
-        noir: {
-          950: '#0B0A09',
-          900: '#12100E',
-          850: '#181613',
-          800: '#201D19',
-          750: '#2A2621',
-          700: '#35302A',
+        olive: {
+          DEFAULT: '#656B4F',
+          muted: '#656B4F',
+          soft: '#7A8062',
+          light: '#8E9475',
         },
-        stone: {
-          50: '#FAF8F5',
-          100: '#F3EFEA',
-          200: '#E5DFD6',
-          300: '#D2C8BC',
-          400: '#B5A897',
-          500: '#948573',
-          600: '#766857',
+        beige: {
+          DEFAULT: '#D8CCBA',
+          subtle: '#E4D9C8',
+          border: '#D8CCBA',
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"Manrope"', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
-        'luxe': '0 20px 50px rgba(0, 0, 0, 0.7)',
-        'gold-glow': '0 0 35px rgba(212, 175, 55, 0.25)',
+        'subtle': '0 4px 20px -2px rgba(33, 26, 22, 0.05)',
+        'elevated': '0 12px 36px -4px rgba(33, 26, 22, 0.08)',
+        'luxe': '0 24px 60px -12px rgba(33, 26, 22, 0.12)',
+        'dark-luxe': '0 24px 60px -12px rgba(0, 0, 0, 0.4)',
+      },
+      letterSpacing: {
+        'widest-luxury': '0.25em',
+        'subtle-caps': '0.15em',
       }
     },
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, ShieldCheck, Mail, Phone, MapPin, ArrowUpRight, Database } from 'lucide-react';
+import { Mail, Phone, MapPin, Database, Sparkles } from 'lucide-react';
 
 interface FooterProps {
   onOpenAdmin: () => void;
@@ -8,75 +8,79 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenAdmin, onOpenChat }) => {
   return (
-    <footer className="bg-noir-950 border-t border-gold-400/20 text-stone-300 relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-gold-500/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 py-16 sm:py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
-          {/* Atelier Brand Identity */}
+    <footer className="bg-espresso text-ivory border-t border-espresso-surface pt-20 pb-12 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 mb-16">
+          {/* Brand Identity */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 flex items-center justify-center text-noir-950 font-serif font-bold text-xl shadow-gold-glow">
+              <div className="w-9 h-9 rounded-sm border border-gold/40 flex items-center justify-center font-serif text-lg text-gold font-light tracking-widest">
                 J
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-2xl font-semibold tracking-wide text-stone-100">
+                <span className="font-serif text-2xl font-light tracking-[0.08em] text-ivory">
                   JUCAS ROYALE
                 </span>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-gold-400 font-medium">
+                <span className="text-[9px] uppercase tracking-[0.25em] text-gold font-medium">
                   Haute Cuisine Atelier
                 </span>
               </div>
             </div>
-            <p className="text-stone-400 text-sm font-light leading-relaxed max-w-sm mb-6">
-              Bespoke culinary architecture for royal weddings, presidential galas, and intimate founder gatherings. Powered by artisan master brigades and real-time Groq AI intelligence.
+            <p className="text-xs sm:text-sm text-taupe-light font-light leading-relaxed max-w-sm mb-6">
+              Artisanal culinary architecture and discrete hospitality for royal weddings, presidential galas, and private founder salons worldwide.
             </p>
             <div className="flex items-center gap-3">
               <button
                 onClick={onOpenChat}
-                className="px-4 py-2 rounded-lg bg-gold-400/10 hover:bg-gold-400/20 text-gold-300 border border-gold-400/30 text-xs font-mono flex items-center gap-2 transition-all"
+                className="px-4 py-2 rounded-sm bg-espresso-surface text-ivory hover:text-gold border border-espresso-surface text-[11px] uppercase tracking-[0.16em] font-medium flex items-center gap-2 transition-all"
               >
-                <Sparkles className="w-3.5 h-3.5" />
-                Consult AI Sommelier
+                <Sparkles className="w-3 h-3 text-gold" />
+                AI Sommelier
               </button>
               <button
                 onClick={onOpenAdmin}
-                className="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-stone-300 border border-white/10 text-xs font-mono flex items-center gap-2 transition-all"
+                className="px-4 py-2 rounded-sm bg-transparent hover:bg-espresso-surface text-taupe-light hover:text-ivory border border-espresso-surface text-[11px] uppercase tracking-[0.16em] font-medium flex items-center gap-2 transition-all"
               >
-                <Database className="w-3.5 h-3.5 text-gold-400" />
-                H2 Admin DB
+                <Database className="w-3 h-3 text-gold" />
+                SQL Registry
               </button>
             </div>
           </div>
 
-          {/* Quick Nav */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-serif text-stone-100 font-medium mb-4 text-base">Navigation</h4>
-            <ul className="space-y-2.5 text-xs font-light text-stone-400">
+            <h4 className="text-[11px] uppercase tracking-[0.2em] text-gold font-mono mb-4">
+              Navigation
+            </h4>
+            <ul className="space-y-2.5 text-xs text-taupe-light font-light">
               <li>
-                <a href="#menus" className="hover:text-gold-300 transition-colors">
+                <a href="#story" className="hover:text-ivory transition-colors">
+                  The Philosophy
+                </a>
+              </li>
+              <li>
+                <a href="#menus" className="hover:text-ivory transition-colors">
                   Curated Menus
                 </a>
               </li>
               <li>
-                <a href="#estimator" className="hover:text-gold-300 transition-colors">
-                  Live Pricing Estimator
+                <a href="#estimator" className="hover:text-ivory transition-colors">
+                  Pricing Estimator
                 </a>
               </li>
               <li>
-                <a href="#philosophy" className="hover:text-gold-300 transition-colors">
-                  Haute Atelier Standards
+                <a href="#pillars" className="hover:text-ivory transition-colors">
+                  Haute Standards
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="hover:text-gold-300 transition-colors">
+                <a href="#testimonials" className="hover:text-ivory transition-colors">
                   Patron Chronicles
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-gold-300 transition-colors">
-                  Operational & DB FAQ
+                <a href="#faq" className="hover:text-ivory transition-colors">
+                  Operational FAQ
                 </a>
               </li>
             </ul>
@@ -84,31 +88,35 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin, onOpenChat }) => {
 
           {/* Cuisines */}
           <div>
-            <h4 className="font-serif text-stone-100 font-medium mb-4 text-base">Collections</h4>
-            <ul className="space-y-2.5 text-xs font-light text-stone-400">
+            <h4 className="text-[11px] uppercase tracking-[0.2em] text-gold font-mono mb-4">
+              Atelier Collections
+            </h4>
+            <ul className="space-y-2.5 text-xs text-taupe-light font-light">
               <li>Royal Awadhi & Mughlai</li>
               <li>Continental French Haute</li>
               <li>Imperial Cantonese & Dim Sum</li>
               <li>Coastal Chettinad & Malabar</li>
-              <li>Live Wood-Fired BBQ</li>
-              <li>Sattvic & Jain Excellence</li>
+              <li>Live Wood-Fired Smokehouse</li>
+              <li>Conscious Plant-Based Luxury</li>
             </ul>
           </div>
 
-          {/* Atelier Salons */}
+          {/* Salons */}
           <div>
-            <h4 className="font-serif text-stone-100 font-medium mb-4 text-base">Atelier Salons</h4>
-            <ul className="space-y-3 text-xs font-light text-stone-400">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-gold-400 shrink-0 mt-0.5" />
-                <span>The Taj Enclave, Colaba, Mumbai 400001</span>
+            <h4 className="text-[11px] uppercase tracking-[0.2em] text-gold font-mono mb-4">
+              Private Salons
+            </h4>
+            <ul className="space-y-3 text-xs text-taupe-light font-light">
+              <li className="flex items-start gap-2.5">
+                <MapPin className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
+                <span>The Taj Enclave, Colaba, Mumbai</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Phone className="w-3.5 h-3.5 text-gold-400 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2.5">
+                <Phone className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
                 <span className="font-mono">+91 (022) 8800-ROYALE</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Mail className="w-3.5 h-3.5 text-gold-400 shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2.5">
+                <Mail className="w-3.5 h-3.5 text-gold shrink-0 mt-0.5" />
                 <span className="font-mono">concierge@jucasroyale.com</span>
               </li>
             </ul>
@@ -116,17 +124,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin, onOpenChat }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-mono">
+        <div className="pt-8 border-t border-espresso-surface flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-taupe font-mono">
           <div>
             © {new Date().getFullYear()} Jucas Royale Atelier. All commissions reserved.
           </div>
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-emerald-400/80">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              Spring Boot 3.3.4 & H2 Engine Active
-            </span>
+          <div className="flex items-center gap-4 text-[11px]">
+            <span>Spring Boot 3.3.4 & Persistent H2 Active</span>
             <span>•</span>
-            <span className="text-gold-400/80">Groq qwen3.8-27b Sommelier</span>
+            <span className="text-gold">Groq qwen3.8-27b Intelligence</span>
           </div>
         </div>
       </div>

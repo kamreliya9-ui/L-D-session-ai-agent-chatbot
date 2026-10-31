@@ -6,7 +6,6 @@ export const CursorFollower: React.FC = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Only enable for fine pointer (desktops)
     const mediaQuery = window.matchMedia('(pointer: fine)');
     if (!mediaQuery.matches) return;
 
@@ -47,36 +46,19 @@ export const CursorFollower: React.FC = () => {
   if (!visible) return null;
 
   return (
-    <>
-      {/* Precision Core Dot */}
+    <div
+      className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out"
+      style={{
+        transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
+      }}
+    >
       <div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75 ease-out"
-        style={{
-          transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
-        }}
-      >
-        <div
-          className={`rounded-full bg-gold-400 transition-all duration-200 ${
-            hovered ? 'w-3 h-3 bg-gold-300 shadow-gold-glow' : 'w-1.5 h-1.5'
-          }`}
-        />
-      </div>
-
-      {/* Trailing Luxury Halo */}
-      <div
-        className="fixed top-0 left-0 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
-        style={{
-          transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
-        }}
-      >
-        <div
-          className={`rounded-full border border-gold-400/40 transition-all duration-300 ${
-            hovered
-              ? 'w-12 h-12 bg-gold-400/10 scale-125 border-gold-400/60'
-              : 'w-7 h-7 bg-transparent'
-          }`}
-        />
-      </div>
-    </>
+        className={`rounded-full transition-all duration-300 ${
+          hovered
+            ? 'w-6 h-6 border border-gold/70 bg-gold/10'
+            : 'w-1.5 h-1.5 bg-gold/80'
+        }`}
+      />
+    </div>
   );
 };

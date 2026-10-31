@@ -4,64 +4,97 @@
 
 @layer base {
   :root {
-    --gold-accent: #D4AF37;
-    --noir-bg: #0B0A09;
+    --color-ivory: #F5F0E7;
+    --color-champagne: #EAE1D2;
+    --color-espresso: #211A16;
+    --color-taupe: #786B60;
+    --color-antique-gold: #B39754;
+    --color-muted-olive: #656B4F;
+    --color-charcoal-brown: #211C18;
+    --color-warm-beige: #D8CCBA;
   }
 
   body {
-    background-color: #0B0A09;
-    color: #FAF8F5;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-ivory);
+    color: var(--color-espresso);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, .font-serif-luxe {
+  h1, h2, h3, h4, .font-serif {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    letter-spacing: -0.02em;
+    font-feature-settings: 'lnum' 1, 'onum' 0;
   }
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0B0A09;
-}
-::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 99px;
+/* Strategic Luxury Gradients */
+.bg-gradient-ivory {
+  background: linear-gradient(135deg, #F8F4EC 0%, #EDE4D6 100%);
 }
 
-/* Glass & Texture utilities */
-.glass-panel {
-  background: rgba(24, 22, 19, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+.bg-gradient-champagne {
+  background: linear-gradient(135deg, #EDE4D6 0%, #DCCBB0 100%);
 }
 
-.gold-border {
-  border: 1px solid rgba(212, 175, 55, 0.2);
+.bg-gradient-espresso {
+  background: linear-gradient(135deg, #2A211B 0%, #171310 100%);
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #F5EED5 0%, #D4AF37 50%, #C29B27 100%);
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #C7A968 0%, #A48642 50%, #D8BD7C 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #B39754 0%, #8A6E30 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Subtle Warm Image Film Tone */
+.film-grain-overlay {
+  position: relative;
+}
+.film-grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(245, 240, 231, 0.05), rgba(33, 26, 22, 0.25));
+  pointer-events: none;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F0E7;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CCBA;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B39754;
+}
+
+/* Quiet luxury borders */
+.border-beige-subtle {
+  border-color: #D8CCBA;
+}
+
+/* Minimal animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.25s ease-out forwards;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Hide scrollbar for clean chip rails */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

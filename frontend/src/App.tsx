@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { BrandStory } from './components/BrandStory';
 import { MenuShowcase } from './components/MenuShowcase';
 import { LiveCalculator } from './components/LiveCalculator';
 import { ExperiencePhilosophy } from './components/ExperiencePhilosophy';
+import { GalleryShowcase } from './components/GalleryShowcase';
 import { Testimonials } from './components/Testimonials';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -17,7 +19,7 @@ export function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState('Royal Indian Feast');
+  const [selectedMenu, setSelectedMenu] = useState('Royal Awadhi & Mughlai');
   const [activeQuote, setActiveQuote] = useState<PricingResponse | null>(null);
   const [chatContext, setChatContext] = useState<string>('');
 
@@ -42,48 +44,54 @@ export function App() {
   };
 
   const handleOrderConfirmed = (order: Order) => {
-    // Optionally alert or pass to chat
     setChatContext(`Confirmed booking ${order.orderCode} for ${order.customerName} (${order.guests} guests, ${order.cuisine}).`);
   };
 
   return (
-    <div className="min-h-screen bg-noir-950 text-stone-100 selection:bg-gold-400 selection:text-noir-950 relative overflow-x-hidden font-sans">
-      {/* Precision Custom Cursor */}
+    <div className="min-h-screen bg-ivory text-espresso selection:bg-gold/20 selection:text-espresso relative overflow-x-hidden font-sans">
+      {/* Precision Quiet Cursor */}
       <CursorFollower />
 
-      {/* Main Luxury Navigation Bar */}
+      {/* Luxury Navigation */}
       <Navbar
         onOpenChat={() => setIsChatOpen(true)}
         onOpenAdmin={() => setIsAdminOpen(true)}
       />
 
-      {/* Hero Section */}
+      {/* Main Experience Stream */}
       <main>
+        {/* Hero Section (Warm Ivory) */}
         <Hero
           onOpenChat={() => setIsChatOpen(true)}
           onExploreEstimator={handleExploreEstimator}
         />
 
-        {/* Curated Haute Menus */}
+        {/* Chapter I: The Atelier Philosophy (Deep Espresso Contrast) */}
+        <BrandStory />
+
+        {/* Chapter II: Curated Haute Menus (Warm Ivory) */}
         <MenuShowcase onSelectMenu={handleSelectMenu} />
 
-        {/* Dynamic Spring Boot Pricing Calculator */}
+        {/* Chapter III: Real-Time Dynamic Pricing Engine (Champagne Cream) */}
         <LiveCalculator
           initialPackage={selectedMenu}
           onBookWithQuote={handleBookWithQuote}
         />
 
-        {/* Atelier Philosophy & Culinary Pillars */}
+        {/* Chapter IV: Haute Standards & Pillars (Warm Ivory) */}
         <ExperiencePhilosophy />
 
-        {/* Verified Patron Chronicles */}
+        {/* Chapter V: Architectural & Culinary Gallery (Deep Espresso Contrast) */}
+        <GalleryShowcase />
+
+        {/* Chapter VI: Patron Chronicles (Warm Ivory) */}
         <Testimonials />
 
-        {/* Technical Architecture & Database FAQ */}
+        {/* Chapter VII: Technical Governance & FAQ (Champagne Cream) */}
         <FaqSection />
       </main>
 
-      {/* Atelier Footer */}
+      {/* Atelier Footer (Deep Espresso Grounding) */}
       <Footer
         onOpenAdmin={() => setIsAdminOpen(true)}
         onOpenChat={() => setIsChatOpen(true)}
@@ -96,13 +104,13 @@ export function App() {
         presetContext={chatContext}
       />
 
-      {/* Persistent H2 SQL Admin Dashboard Modal */}
+      {/* Persistent H2 SQL Admin Registry Console */}
       <AdminDashboardModal
         isOpen={isAdminOpen}
         onClose={() => setIsAdminOpen(false)}
       />
 
-      {/* Booking Commission Modal */}
+      {/* Booking Commission Reservation Modal */}
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}

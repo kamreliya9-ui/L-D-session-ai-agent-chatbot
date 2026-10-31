@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Utensils, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowRight, Utensils, Sparkles } from 'lucide-react';
 
 export interface MenuPackageData {
   id: string;
@@ -9,6 +8,7 @@ export interface MenuPackageData {
   category: string;
   ratePerHead: number;
   minGuests: number;
+  image: string;
   badge: string;
   courses: {
     appetizers: string[];
@@ -21,92 +21,98 @@ export interface MenuPackageData {
 export const MENU_PACKAGES: MenuPackageData[] = [
   {
     id: 'indian',
-    name: 'Royal Indian Feast',
-    tagline: 'Imperial Mughlai & Royal Awadhi Banqueting',
+    name: 'Royal Awadhi & Mughlai',
+    tagline: 'Imperial Dastarkhwan & Heritage Slow-Cooked Banqueting',
     category: 'Heritage',
     ratePerHead: 500,
     minGuests: 100,
     badge: 'Signature Wedding',
+    image: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800&auto=format&fit=crop',
     courses: {
-      appetizers: ['Galouti Kebab on Sheermal', 'Tandoori Malai Broccoli', 'Paneer Tikka Angara'],
-      mains: ['Slow-Cooked Awadhi Dum Biryani', 'Classic Butter Chicken', '24-Hour Dal Makhani'],
-      theatre: 'Old Delhi Chandni Chowk Live Chaat & Puchka Courtyard',
-      dessert: 'Shahi Saffron Kulfi & Warm Malpua with Rabri'
+      appetizers: ['Smoked Galouti Kebab on Sheermal', 'Tandoori Saffron Malai Broccoli', 'Paneer Tikka Angara'],
+      mains: ['24-Hour Awadhi Dum Gosht Biryani', 'Classic Murgh Makhani', 'Dal Bukhara Slow-Simmered for 36 Hours'],
+      theatre: 'Old Delhi Chandni Chowk Live Puchka & Chaat Courtyard',
+      dessert: 'Shahi Saffron Kulfi Sphere with Warm Malpua & Rabri'
     }
   },
   {
     id: 'continental',
-    name: 'Continental Elegance',
-    tagline: 'Modern European & Mediterranean Plated Artistry',
-    category: 'Western',
+    name: 'Continental French Haute',
+    tagline: 'Contemporary European Fine Plating & French Techniques',
+    category: 'Continental',
     ratePerHead: 650,
     minGuests: 50,
-    badge: 'Corporate Gala',
+    badge: 'Presidential Gala',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop',
     courses: {
-      appetizers: ['Truffle Wild Mushroom Bruschetta', 'Herb Grilled Prawns', 'Caprese Skewers'],
-      mains: ['Pan-Seared Seabass Meunière', 'Rosemary Tender Chicken', 'Artisanal Gnocchi'],
-      theatre: 'Parmesan Reggiano Wheel Fettuccine Live Station',
-      dessert: 'Flambé Crème Brûlée & Belgian Chocolate Silk Mousse'
+      appetizers: ['Wild Mushroom & Black Truffle Arancini', 'Pan-Seared Scallops / Hearts of Palm', 'Heirloom Burrata Crostini'],
+      mains: ['Sous-Vide Herb Tenderloin / Truffle Polenta', 'Chilean Sea Bass with Lemon Beurre Blanc', 'Roasted Baby Root Vegetables'],
+      theatre: 'Flaming Grand Marnier Crepe Suzette Tableside Stage',
+      dessert: 'Belgian Valrhona Dark Chocolate Marquise with Berry Gold Dust'
     }
   },
   {
-    id: 'chinese',
-    name: 'Imperial Pan-Asian',
-    tagline: 'Cantonese Dim Sum, Sichuan Wok & Teppanyaki',
-    category: 'Asian',
+    id: 'asian',
+    name: 'Imperial Cantonese & Dim Sum',
+    tagline: 'Authentic Wok Mastery, Handcrafted Dim Sum & Robata Grills',
+    category: 'Cantonese',
     ratePerHead: 450,
-    minGuests: 50,
-    badge: 'Cocktail Soirée',
+    minGuests: 80,
+    badge: 'Soirée Favorite',
+    image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=800&auto=format&fit=crop',
     courses: {
-      appetizers: ['Crystal Truffle Edamame Dim Sum', 'Crispy Golden Lotus Stem', 'Chicken Satay'],
-      mains: ['Wok-Smoked Hakka Noodles', 'Sichuan Burnt Garlic Fried Rice', 'Tofu in Black Bean'],
-      theatre: 'Live Mongolian Wok & Dim Sum Steamer Station',
-      dessert: 'Warm Toffee Apple with Vanilla Bean Gelato'
+      appetizers: ['Steamed Truffle Edamame Dumplings', 'Crispy Prawn Cheung Fun', 'Chicken Basil Sui Mai'],
+      mains: ['Sichuan Claypot Stone Rice', 'Crispy Silken Tofu in XO Sauce', 'Wok-Tossed Asparagus & Water Chestnuts'],
+      theatre: 'Live Master Dim Sum Steam Baskets & Bao Bar',
+      dessert: 'Warm Matcha Fondant & Chilled Mango Sago Pomelo'
     }
   },
   {
-    id: 'south',
-    name: 'South Indian Delight',
-    tagline: 'Coastal Malabar, Chettinad & Temple Banquets',
+    id: 'coastal',
+    name: 'Coastal Chettinad & Malabar',
+    tagline: 'Traditional Stone-Ground Spices & Coastal Seafood Heritage',
     category: 'Heritage',
     ratePerHead: 350,
-    minGuests: 50,
-    badge: 'Traditional Heritage',
+    minGuests: 60,
+    badge: 'Culinary Heritage',
+    image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800&auto=format&fit=crop',
     courses: {
-      appetizers: ['Chettinad Pepper Chicken Fry', 'Guntur Podi Idli Toss', 'Crispy Medu Vada'],
-      mains: ['Kerala Fish Moilee', 'Vegetable Malabar Stew with Appam', 'Bisi Bele Bath'],
-      theatre: 'Live Crispy Ghee Roast Dosa & Fluffy Uttapam Bar',
-      dessert: 'Parippu Payasam & Authentic Brass Filter Kaapi'
+      appetizers: ['Kozhi Varuval Crispy Pepper Chicken', 'Malabar Meen Pollichathu in Banana Leaf', 'Vazhaipoo Vadai'],
+      mains: ['Chettinad Pepper Mutton Gravy', 'Alleppey Fish Curry with Kokum', 'Layered Flaky Malabar Parotta'],
+      theatre: 'Live Fluffy Appam & Stew Theatre with Fresh Coconut Milk',
+      dessert: 'Elaneer Payasam (Tender Coconut Kheer) with Roasted Cashews'
     }
   },
   {
     id: 'bbq',
-    name: 'Live Fire BBQ & Grill',
-    tagline: 'Argentine Asado, Smoked Platters & Craft Mocktails',
+    name: 'Live Fire Smokehouse & BBQ',
+    tagline: 'Wood-Fired Oak Grills, Artisanal Skewers & Gourmet Breads',
     category: 'Live Fire',
     ratePerHead: 750,
-    minGuests: 30,
-    badge: 'VIP Outdoor Experience',
+    minGuests: 40,
+    badge: 'High Impact',
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop',
     courses: {
-      appetizers: ['Smoked Peri-Peri Wings', 'Charred Herb Paneer Steaks', 'Seekh Kebab Skewers'],
-      mains: ['Slow-Smoked Herb Lamb Chops', 'Fire-Roasted Sweet Corn', 'Garlic Butter Pita'],
-      theatre: 'Live Master Pitmaster Charcoal Grill & Smoker Pit',
-      dessert: 'Charred Cinnamon Pineapple with Artisan Mocktail Lounge'
+      appetizers: ['Smoked Peri-Peri Glazed Skewers', 'Charred Herb Halloumi Steaks', 'Pork/Lamb Seekh on Cinnamon Sticks'],
+      mains: ['Slow-Smoked Herb Lamb Chops', 'Fire-Roasted Sweet Corn with Herb Butter', 'Warm Garlic Pita & Tzatziki'],
+      theatre: 'Live Master Pitmaster Charcoal Grill & Texas Smoke Pit',
+      dessert: 'Charred Spiced Pineapple with Artisan Smoked Honey Gelato'
     }
   },
   {
     id: 'vegan',
-    name: 'Vegan & Wellness',
-    tagline: 'Conscious Plant-Based Luxury & Organic Superfoods',
+    name: 'Conscious Plant-Based Luxury',
+    tagline: 'Superfood Nutrition, Clean Gourmet & Zero-Waste Artistry',
     category: 'Wellness',
     ratePerHead: 550,
     minGuests: 30,
     badge: 'Clean Gourmet',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop',
     courses: {
-      appetizers: ['Avocado Nori Rice Rolls', 'Edamame Truffle Hummus', 'Quinoa Falafel'],
-      mains: ['Lemongrass Thai Green Curry', 'Wild Rice Buddha Bowl', 'Jackfruit Carnitas'],
+      appetizers: ['Avocado Nori Crispy Rice Rolls', 'Smoked Beetroot Carpaccio', 'Truffle-Infused Cashew Crostini'],
+      mains: ['Wild Morel Thai Botanical Curry', 'Black Quinoa Buddha Bowl with Tahini Glaze', 'Jackfruit Confit Carnitas'],
       theatre: 'Cold-Pressed Botanical Elixir & Microgreen Salad Bar',
-      dessert: 'Raw Organic Cacao Silk Tart with Wild Berry Coulis'
+      dessert: 'Raw Organic Cacao Silk Tart with Wild Berry Reduction'
     }
   }
 ];
@@ -116,130 +122,126 @@ interface MenuShowcaseProps {
 }
 
 export const MenuShowcase: React.FC<MenuShowcaseProps> = ({ onSelectMenu }) => {
-  const [filter, setFilter] = useState<'All' | 'Heritage' | 'Western' | 'Asian' | 'Live Fire'>('All');
+  const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const filteredMenus = filter === 'All' 
-    ? MENU_PACKAGES 
-    : MENU_PACKAGES.filter(m => m.category === filter);
+  const categories = ['All', 'Heritage', 'Continental', 'Cantonese', 'Live Fire', 'Wellness'];
+
+  const filteredMenus = activeCategory === 'All'
+    ? MENU_PACKAGES
+    : MENU_PACKAGES.filter((m) => m.category === activeCategory);
 
   return (
-    <section id="menus" className="py-24 relative z-10 border-t border-white/5 bg-noir-900/40">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Section Header */}
+    <section id="menus" className="py-24 sm:py-32 bg-ivory text-espresso border-b border-beige/60">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold block mb-3">
-              Curated Culinary Atelier
+            <span className="text-[10px] uppercase tracking-[0.25em] text-gold font-mono block mb-2">
+              Curated Collections • Season 2026
             </span>
-            <h2 className="text-4xl sm:text-5xl font-serif text-stone-100 leading-tight">
-              Six Distinct Visions of <br />
-              <span className="italic font-normal gold-gradient-text">Gastronomic Prestige.</span>
+            <h2 className="font-serif text-4xl sm:text-5xl font-light text-espresso leading-tight">
+              Six signature menus, <br />
+              <span className="italic font-normal text-gold">bound by culinary pedigree.</span>
             </h2>
           </div>
-
-          {/* Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-            {(['All', 'Heritage', 'Western', 'Asian', 'Live Fire'] as const).map(tab => (
-              <button
-                key={tab}
-                onClick={() => setFilter(tab)}
-                className={`px-4 py-2 rounded-full text-xs uppercase tracking-wider font-medium transition-all whitespace-nowrap ${
-                  filter === tab
-                    ? 'bg-gold-400 text-noir-950 font-bold shadow-gold-glow'
-                    : 'bg-noir-800 text-stone-400 hover:text-stone-200 border border-white/5 hover:border-gold-400/20'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
+          <p className="text-xs sm:text-sm text-taupe font-light max-w-md">
+            Each collection is customized to your venue, timeline, and dietary preferences. Select any collection to configure your commission quote in real time.
+          </p>
         </div>
 
-        {/* Menu Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredMenus.map((pkg) => (
-            <motion.div
-              key={pkg.id}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="group rounded-2xl bg-gradient-to-b from-noir-800/90 to-noir-900/90 border border-gold-400/15 hover:border-gold-400/40 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-luxe hover:-translate-y-1.5"
+        {/* Minimal Category Tabs */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-12 border-b border-beige/50 no-scrollbar">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`text-xs uppercase tracking-[0.16em] px-4 py-2 rounded-sm transition-all whitespace-nowrap font-medium ${
+                activeCategory === cat
+                  ? 'bg-espresso text-ivory'
+                  : 'text-taupe hover:text-espresso bg-transparent'
+              }`}
             >
-              {/* Card Header */}
-              <div className="p-7 pb-5 border-b border-white/5 relative">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] uppercase tracking-[0.2em] px-2.5 py-1 rounded-full bg-gold-400/10 text-gold-300 border border-gold-400/20 font-semibold">
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Asymmetrical Menu Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+          {filteredMenus.map((pkg) => (
+            <div
+              key={pkg.id}
+              className="bg-ivory-light border border-beige hover:border-gold/60 rounded-sm overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-elevated group"
+            >
+              <div>
+                {/* Image Aspect Box */}
+                <div className="aspect-[16/10] overflow-hidden relative bg-champagne">
+                  <img
+                    src={pkg.image}
+                    alt={pkg.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter contrast-[1.02]"
+                  />
+                  <div className="absolute top-3 left-3 bg-ivory/90 backdrop-blur-sm px-2.5 py-1 text-[9px] uppercase tracking-wider font-mono text-espresso border border-beige/60">
                     {pkg.badge}
-                  </span>
-                  <span className="text-xs text-stone-400 font-medium">
-                    Min {pkg.minGuests} Guests
-                  </span>
-                </div>
-                <h3 className="font-serif text-2xl font-bold text-stone-100 group-hover:text-gold-300 transition-colors mb-1">
-                  {pkg.name}
-                </h3>
-                <p className="text-xs text-stone-400 font-light italic">
-                  {pkg.tagline}
-                </p>
-              </div>
-
-              {/* Course Highlights */}
-              <div className="p-7 pt-5 space-y-4 flex-1">
-                <div>
-                  <span className="text-[11px] uppercase tracking-wider text-gold-400/80 font-semibold block mb-1.5">
-                    Signature Mains
-                  </span>
-                  <ul className="space-y-1.5">
-                    {pkg.courses.mains.map((item, idx) => (
-                      <li key={idx} className="text-xs text-stone-300 flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold-400/60" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="pt-3 border-t border-white/5">
-                  <span className="text-[11px] uppercase tracking-wider text-gold-400/80 font-semibold block mb-1">
-                    Live Culinary Theatre
-                  </span>
-                  <p className="text-xs text-stone-300 font-light flex items-center gap-2">
-                    <Utensils className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
-                    <span>{pkg.courses.theatre}</span>
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-white/5">
-                  <span className="text-[11px] uppercase tracking-wider text-gold-400/80 font-semibold block mb-1">
-                    Grand Finale
-                  </span>
-                  <p className="text-xs text-stone-400 italic">
-                    {pkg.courses.dessert}
-                  </p>
-                </div>
-              </div>
-
-              {/* Card Footer */}
-              <div className="p-7 pt-4 border-t border-white/5 bg-noir-950/40 flex items-center justify-between">
-                <div>
-                  <div className="font-serif text-2xl font-bold text-stone-100">
-                    &#8377;{pkg.ratePerHead}
                   </div>
-                  <div className="text-[10px] text-stone-400 uppercase tracking-wider">
-                    Per Plate All-Inclusive
+                  <div className="absolute bottom-3 right-3 bg-espresso/90 text-ivory px-3 py-1 text-xs font-mono">
+                    ₹{pkg.ratePerHead} <span className="text-[10px] text-taupe-light">/ head</span>
                   </div>
                 </div>
 
+                {/* Card Content */}
+                <div className="p-6">
+                  <div className="text-[10px] uppercase tracking-widest text-gold font-mono mb-1">
+                    {pkg.category} Atelier
+                  </div>
+                  <h3 className="font-serif text-2xl font-normal text-espresso mb-2 group-hover:text-gold transition-colors">
+                    {pkg.name}
+                  </h3>
+                  <p className="text-xs text-taupe font-light mb-6 line-clamp-2">
+                    {pkg.tagline}
+                  </p>
+
+                  {/* Course Details */}
+                  <div className="space-y-3.5 text-xs border-t border-beige/60 pt-4">
+                    <div>
+                      <span className="text-[10px] uppercase font-mono text-taupe block">
+                        Appetizers (Sample)
+                      </span>
+                      <p className="text-espresso font-light mt-0.5 line-clamp-1">
+                        {pkg.courses.appetizers.join(' • ')}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase font-mono text-taupe block">
+                        Main Courses
+                      </span>
+                      <p className="text-espresso font-light mt-0.5 line-clamp-1">
+                        {pkg.courses.mains.join(' • ')}
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-[10px] uppercase font-mono text-gold block">
+                        Interactive Theatre
+                      </span>
+                      <p className="text-espresso font-light mt-0.5 text-[11px]">
+                        {pkg.courses.theatre}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Footer */}
+              <div className="p-6 pt-0 border-t border-beige/40">
                 <button
                   onClick={() => onSelectMenu(pkg.name, pkg.ratePerHead)}
-                  className="px-4 py-2.5 rounded-full bg-gold-400/15 hover:bg-gold-400 text-gold-300 hover:text-noir-950 border border-gold-400/30 hover:border-transparent font-medium text-xs uppercase tracking-wider transition-all flex items-center gap-1.5 group-hover:scale-105"
+                  className="w-full mt-4 py-2.5 rounded-sm border border-espresso hover:bg-espresso hover:text-ivory text-espresso text-[11px] uppercase tracking-[0.16em] font-medium transition-all flex items-center justify-center gap-2 group-hover:bg-espresso group-hover:text-ivory"
                 >
-                  <span>Select &amp; Quote</span>
+                  <span>Configure Commission</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
