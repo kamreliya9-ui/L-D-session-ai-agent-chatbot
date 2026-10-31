@@ -1,0 +1,24 @@
+# Maven build output
+backend/target/
+**/target/
+
+# H2 Database files
+backend/data/
+**/data/*.db
+*.mv.db
+*.trace.db
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Local configuration & secrets
+local.properties
+**/local.properties
+*.env
+.env*
+
+# Node/Server
+node_modules/
